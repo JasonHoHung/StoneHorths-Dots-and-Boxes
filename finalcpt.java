@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.*;
+import javax.imageio.*;
 
 public class finalcpt implements ActionListener{
 	// Properties
@@ -12,16 +13,23 @@ public class finalcpt implements ActionListener{
 	JButton but3 = new JButton("Settings");
 	JButton but4 = new JButton("Quit");
 	JLabel label = new JLabel("StoneHearth");
+	int backX = 1280;
+	int backY = 720;
+	BufferedImage imgfile = null;
 
 	// Methods
 	public void actionPerformed(ActionEvent evt){
 		if(evt.getSource() == but4){
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
+	}
+
+	public void paintComponent(Graphics g){
+		g.drawImage(imgfile, backX, backY, null);
 	}
 
 	// Constructor
 	public finalcpt(){
+		super();
 		panel.setLayout(null);
 		panel.setPreferredSize(new Dimension(1280, 720));
 		but1.setSize(640, 50);
@@ -47,6 +55,11 @@ public class finalcpt implements ActionListener{
 		frame.setContentPane(panel);
 		frame.pack();
 		frame.setVisible(true);
+		try{
+			imgfile = ImageIO.read(new File("background.png"));
+		}catch(IOException e){
+			System.out.println("Unable to load image");
+		}
 
 	}
 
