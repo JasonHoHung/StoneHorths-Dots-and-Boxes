@@ -1,8 +1,8 @@
 # StoneHorths-Dots-and-Boxes
 
 Game Created By:
-Dylan Chipun
-Jason Ho Hung
+Dylan Chipun,
+Jason Ho Hung, and 
 Raymond Shoong
 
 StoneHorth's Dots and Boxes is a game in which two players take turns placing sticks to make boxes.
